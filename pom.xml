@@ -4,4 +4,8 @@
   <artifactId>Mobile</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Mobile</name>
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
 </project>
