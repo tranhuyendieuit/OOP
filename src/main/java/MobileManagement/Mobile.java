@@ -4,19 +4,26 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Mobible {
+public abstract class Mobile {
 
-	String name;
-	String brand;
-	Date debutDay;
-	int quantity;
-	int price;
-	Screen screen;
+	private String name;
 
-	public Mobible() {
+	private String brand;
+
+	private Date debutDay;
+
+	private int quantity;
+
+	private int price;
+
+	private Screen screen;
+
+	private String version;
+
+	public Mobile() {
 	}
 
-	public Mobible(String name, String brand, Date debutDay, int quantity, int price, Screen screen) {
+	public Mobile(String name, String brand, Date debutDay, int quantity, int price, Screen screen) {
 		this.name = name;
 		this.brand = brand;
 		this.debutDay = debutDay;
@@ -24,6 +31,8 @@ public class Mobible {
 		this.price = price;
 		this.screen = screen;
 	}
+
+	public abstract String sayHello();
 
 	public String getName() {
 		return name;
@@ -73,6 +82,14 @@ public class Mobible {
 		this.screen = screen;
 	}
 
+	public String getVersion() {
+		return version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
 	public String getDebutDayString() {
 		SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss dd/MM/yyyy");
 		String str = format.format(debutDay);
@@ -80,7 +97,7 @@ public class Mobible {
 		return str;
 	}
 
-	public void intput() {
+	public void input() {
 		System.out.println("Enter information's mobile: ");
 		Scanner input = new Scanner(System.in);
 
